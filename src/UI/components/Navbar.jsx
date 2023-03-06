@@ -5,13 +5,14 @@ import { AuthContext } from '../../auth/context/AuthContext';
 
 export const Navbar = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
     
     const navigate = useNavigate();
     const onLogout = () =>{
         navigate('/Login',{
             replace: true
         });
+        logout();
     }
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark px-5 py-3">
